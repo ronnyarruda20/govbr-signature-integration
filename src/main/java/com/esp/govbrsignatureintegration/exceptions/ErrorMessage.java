@@ -1,14 +1,19 @@
 package com.esp.govbrsignatureintegration.exceptions;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.Date;
 
-/**
- * Classe que encapsula as mensagens de erro.
- */
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class ErrorMessage {
     private Date timestamp;
     private String message;
     private String description;
+    private int status;
 
     public ErrorMessage(Date timestamp, String message, String description) {
         this.timestamp = timestamp;
@@ -16,15 +21,4 @@ public class ErrorMessage {
         this.description = description;
     }
 
-    public Date getTimestamp() {
-        return timestamp;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public String getDescription() {
-        return description;
-    }
 }

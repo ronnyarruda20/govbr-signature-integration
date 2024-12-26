@@ -34,6 +34,7 @@ public class GetTokenService {
 
         GetTokenReturnModel getTokenReturnModel = tokenReturnModelMono.block();
 
+        assert getTokenReturnModel != null;
         return getTokenReturnModel.getAccess_token();
     }
 }

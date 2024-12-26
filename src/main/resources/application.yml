@@ -5,6 +5,22 @@ spring:
       max-request-size: 100MB
   config:
     import: optional:file:.env[.properties]
+  security:
+    user:
+      name: ${SECURITY_USER_NAME:admin}
+      password: ${SECURITY_USER_PASSWORD:admin123}
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    display-request-duration: true
+    disable-swagger-default-url: false
+logging:
+  level:
+    root: INFO # Nível padrão de log (pode ser DEBUG, INFO, WARN, ERROR)
+    org.springframework: DEBUG # Ativa DEBUG para pacotes do Spring
+    com.esp.govbrsignatureintegration: DEBUG # Ativa DEBUG para o seu pacote específico
+  file:
+    name: application.log # Opcional: salva os logs em um arquivo
 server:
   port : ${SERVER_PORT}
 govbr:
