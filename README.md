@@ -47,7 +47,7 @@ sequenceDiagram
     API->>ITI: GET /certificadoPublico
     API->>API: aplica QR code e carimbo, calcula o hash SHA-256
     API->>ITI: POST /assinarPKCS7 (hash)
-    ITI-->>API: assinatura PKCS#7
+    ITI-->>API: assinatura PKCS7
     API-->>App: documento_assinado.pdf
 ```
 
